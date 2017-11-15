@@ -1,23 +1,15 @@
-# step.3
+# step.2
 
-今回はswarm関連の説明はしないので、そういうこともできるんだなぁくらいの理解でよいです
+複数のコンテナをまとめて起動
 
-    # 何もないことを確認
-    docker service ls
+    # Composeの設定にそってコンテナ起動
+    docker-compose up
 
-    # swarmクラスタの初期化とデプロイ
-    docker swarm init
-    docker stack deploy -c docker-compose.yml my-docker-practice
-    
-    # 確認
-    docker service ls
+    # 別ターミナルで起動しているコンテナの確認
+    docker ps
 
 そのあと以下でアクセス確認
 
-http://localhost:38080/
-http://localhost:48080/
+http://localhost:18080/
 
-確認が終わったら不要なクラスタを解体する
-
-    docker stack rm my-docker-practice
-    docker swarm leave --force
+http://localhost:28080/
